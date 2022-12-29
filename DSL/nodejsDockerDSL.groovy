@@ -1,9 +1,9 @@
 job('Aplicacion Node.js Docker DSL') {
     description('Aplicación Node JS Docker DSL para el curso de Jenkins')
     scm {
-        git('https://github.com/macloujulian/nodejsapp.git', 'master') { node ->
-            node / gitConfigName('macloujulian')
-            node / gitConfigEmail('macloujulian@gmail.com')
+        git('https://github.com/JuanManuelFernandezV/jenkins-nodejs.git', 'master') { node ->
+            node / gitConfigName('JuanManuelFernandezV')
+            node / gitConfigEmail('juanm2003fernandez@gmail.com')
         }
     }
     triggers {
@@ -20,25 +20,6 @@ job('Aplicacion Node.js Docker DSL') {
             forcePull(false)
             createFingerprints(false)
             skipDecorate()
-        }
-    }
-    publishers {
-	slackNotifier {
-            notifyAborted(true)
-            notifyEveryFailure(true)
-            notifyNotBuilt(false)
-            notifyUnstable(false)
-            notifyBackToNormal(true)
-            notifySuccess(true)
-            notifyRepeatedFailure(false)
-            startNotification(false)
-            includeTestSummary(false)
-            includeCustomMessage(false)
-            customMessage(null)
-            sendAs(null)
-            commitInfoChoice('NONE')
-            teamDomain(null)
-            authToken(null)
         }
     }
 }
