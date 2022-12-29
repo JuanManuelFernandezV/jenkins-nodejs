@@ -14,7 +14,7 @@ job('Aplicacion Node.js Docker DSL') {
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('JuanManuelFernandezV/jenkins-nodejs')
+            repositoryName('juanmanuelfernandez1/curso-jenkins')
             tag('${GIT_REVISION,length=7}')
             registryCredentials('docker-hub')
             forcePull(false)
